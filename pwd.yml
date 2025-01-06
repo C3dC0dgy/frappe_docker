@@ -80,7 +80,7 @@ services:
   db:
     image: mariadb:10.6
     networks:
-      - frappe_network
+      - erpnext
     healthcheck:
       test: mysqladmin ping -h localhost --password=admin
       interval: 1s
