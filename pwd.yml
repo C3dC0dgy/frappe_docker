@@ -2,7 +2,7 @@ services:
   backend:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -18,7 +18,7 @@ services:
   configurator:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: none
@@ -47,7 +47,7 @@ services:
   create-site:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: none
@@ -80,7 +80,7 @@ services:
   db:
     image: mariadb:10.6
     networks:
-      - erpnext
+      - frappe
     healthcheck:
       test: mysqladmin ping -h localhost --password=admin
       interval: 1s
@@ -102,7 +102,7 @@ services:
   frontend:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     depends_on:
       - websocket
     deploy:
@@ -128,7 +128,7 @@ services:
   queue-long:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -144,7 +144,7 @@ services:
   queue-short:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -160,7 +160,7 @@ services:
   redis-queue:
     image: redis:6.2-alpine
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -170,7 +170,7 @@ services:
   redis-cache:
     image: redis:6.2-alpine
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -180,7 +180,7 @@ services:
   scheduler:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -194,7 +194,7 @@ services:
   websocket:
     image: frappe/erpnext:v15.47.5
     networks:
-      - erpnext
+      - frappe
     deploy:
       restart_policy:
         condition: on-failure
@@ -213,5 +213,5 @@ volumes:
   logs:
 
 networks:
-  erpnext:
+  frappe:
     driver: bridge
