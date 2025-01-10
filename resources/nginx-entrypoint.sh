@@ -23,9 +23,9 @@ if [[ -z "$UPSTREAM_REAL_IP_RECURSIVE" ]]; then
 fi
 if [[ -z "$FRAPPE_SITE_NAME_HEADER" ]]; then
   # shellcheck disable=SC2016
-  echo 'FRAPPE_SITE_NAME_HEADER defaulting to C.C.Frameworks'
+  echo 'FRAPPE_SITE_NAME_HEADER defaulting to portal.codgystech.net'
   # shellcheck disable=SC2016
-  export FRAPPE_SITE_NAME_HEADER='C.C.Frameworks'
+  export FRAPPE_SITE_NAME_HEADER='portal.codgystech.net'
 fi
 
 if [[ -z "$PROXY_READ_TIMEOUT" ]]; then
